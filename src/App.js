@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+import React from 'react';
+import { useState } from 'react';
 
 function App() {
+  const [Comment, setComment] = useState('');
+  const onChangeHandler =(e) => {
+    setComment(e.target.value)
+  }
+  const [comments, setComments] = useState([]);
+  const onClickHandler = () => {
+    setComments((comments) => [...comments, Comment])
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      {comments.map((text) => {
+        <div className="comment-container">{text}</div>;
+      })}
+      
+      <div className='comment-flexBox'>
+        <h3 className='comment-text'>Comment</h3>
+        <textarea value={Comment} onChange={onChangeHandler} className='input-box'/>
+        <button onClick={onClickHandler} className='comment-button'>Submit</button>
+      </div>
     </div>
   );
 }
