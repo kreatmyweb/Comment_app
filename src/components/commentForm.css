@@ -1,0 +1,66 @@
+.main__container {
+    display:grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: .2rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    line-height: 1.7;
+    /* border: 1px solid red; */
+
+}
+
+.main__container > div {
+    background:var(--color-bg-variant);
+    padding: 2.4rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.main__container > div:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+.subject__chooser {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+.comment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    
+}
+.subject__chooser, .comment-container {
+    margin-top: 6px;
+    color: var(--color-primary);
+}
+
+/* media query ( for tablet-medium devices) */
+@media screen and ( max-width:1024px){
+ .main__container{
+    grid-template-columns: 1fr;
+ } 
+ .main__container > div {
+    width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+    padding: 1rem;
+ }
+}
+    
+/* media query ( for tablet-small devices) */
+@media screen and ( max-width:600px){
+   .main__container{
+    gap: 1rem;
+
+   } 
+   .main__container > div{
+    width: 100%;
+    padding: 2rem 1rem;
+   }
+}

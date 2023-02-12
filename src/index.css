@@ -1,74 +1,88 @@
-/* body {
-  margin: 0;
-  box-sizing: border-box;
-  background: #ececec;
-  font-family: -apple-system, 
-  BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+/* will put variavles here */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;700&display=swap');
 
+/* 1st zero out the margin  */
+
+* {
+    /* background-color: red; */
+    margin-top: 6rem;
+    padding: 0 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* to be used by every variable */
+:root {
+    --color-bg:#1f1f38;
+    --color-bg-variant:#2c2c6c;
+    --color-primary: #4db5ff;
+    --color-primary-variant: rgba(77,181,255,0.4);
+    --color-white:#fff;
+    --color-light:rgba(255,255,255, 0.6);
+    --transition: all 400ms ease;
+
+    --container-width-lg:75%;
+    --container-width-md:86%;
+    --container-width-sm:90%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* font-family: 'Montserrat', sans-serif; */
+font-family: 'Poppins', sans-serif;
+background-color: var(--color-bg);
+color: var(--color-white);
+line-height: 1.7;
+/* border: 1px dotted red; */
+/* background-image: url(../src/Assets/); */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.main-container{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: -200px;
-}
-.comment-flexBox{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  }
-  .comment-text{
-    margin: 12px 0;
-    font-size: 1.15rem;
-    font-size: 600;
-  }
-  .input-box{
-   height: 75px; 
-   size: 465px;
-   background-color: #fff;
-  }
-  .comment-button{
-    height: 40px;
-    width: 80px;
-    background-color: rgb(45, 198, 229);
-    columns: #fff;
-    font-size: 1.05rem;
-    margin-top: 10px;
-    border-radius: 5px;
-    border-style: none;
+/* General style */
+.comment-button, .toggle, .service__provided {
+    width:max-content;
+    display: inline-block;
+    color: var(--color-bg-variant);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
     cursor: pointer;
-  }
-  .comment-container{
-     height: 75px; 
-   size: 465px;
-   background-color: #fff;
-   border-radius: 5px;
-   margin: 10px 0;
-   word-break: break-all;
-  }
+    border: 1px solid var(--color-primary);
+    transform: var(--transition);
+}
+.comment-text{
+width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    resize: none;
+    color: var(--color-white);
+}
+.comment-button:hover {
+    background: var(--color-primary-variant);
+    color: var(--color-bg);
+}
+.comment-button-primary, .toggle, .service__provided {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+
+/* media query ( for tablet-medium devices) */
+@media screen and ( max-width:1024px){
+    .main__container{
+        /* width: var(--container-width-md); */
+        margin-top: 6rem;
+        padding-left: 2rem;
+    }
+}
+
+/* media query ( for small devices) */
+@media screen and ( max-width:600px){
+    .main__container{
+        width: var(--container-width-sm);
+        margin-bottom: 6rem;
+    }  
+}
