@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRef } from "react";
-import './commentForm.css'
+import './commentForm.css';
+import { ImPencil2 } from "react-icons/im";
 
 const CommentForm = () => {
       const [isToggled, setIsToggled] = useState(false);
@@ -20,15 +21,33 @@ const CommentForm = () => {
   return (
     <div className="main__container">
       <div className="subject-chooser__selected">
-        <button className="toggle" onClick={toggle}>Click</button>
+        <span>Please click to Comment and Thank you!</span>
+        <br />
+        <button  className="toggle" onClick={toggle}>
+          Click
+        <ImPencil2/></button>
         {isToggled && (
           <div className="subject-chooser__options">
             <select>
-              <option className="service__provided" value="" onClick={handleChoose}>Select service provided</option>
-              <option value="Subject 1" onClick={handleChoose}>Oxygen Setup/Delivery</option>
-              <option value="Subject 2" onClick={handleChoose}>Bipap/CPAP/Ventilator Setup</option>
-              <option value="Subject 3" onClick={handleChoose}>Supply</option>
-              <option value="Subject 3" onClick={handleChoose}>Phone Services</option>
+              <option
+                className="service__provided"
+                value=""
+                onClick={handleChoose}
+              >
+                Select service provided
+              </option>
+              <option value="Subject 1" onClick={handleChoose}>
+                Oxygen Setup/Delivery
+              </option>
+              <option value="Subject 2" onClick={handleChoose}>
+                Bipap/CPAP/Ventilator Setup
+              </option>
+              <option value="Subject 3" onClick={handleChoose}>
+                Supply
+              </option>
+              <option value="Subject 3" onClick={handleChoose}>
+                Phone Services
+              </option>
             </select>
           </div>
         )}
@@ -38,7 +57,10 @@ const CommentForm = () => {
         <form className="CommentForm" ref={form} onSubmit={sendMesseage}>
           <label className="comment__titile">Leave a comment:</label>
           <textarea className="comment-text" onChange={sendMesseage} />
-          <button className="comment-button" type="submit">{" "}Submit{" "}</button>
+          <button className="comment-button" type="submit">
+            {" "}
+            Submit{" "}
+          </button>
         </form>
       </div>
     </div>
